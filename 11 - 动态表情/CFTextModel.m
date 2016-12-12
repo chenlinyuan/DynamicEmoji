@@ -52,11 +52,10 @@
     for (NSString* rangeString in ranges) {
         CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
         attachment.gifName = gifEomtionDict[rangeString];
-        if (!_onlyGif) {
-            attachment.mark = YES;
-        }
+//        if (_onlyGif) {
             UIImage *image = [UIImage sd_animatedGIFNamed:attachment.gifName];
             attachment.image = image;
+//        }
 
         NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
         [attributedString replaceCharactersInRange:NSRangeFromString(rangeString) withAttributedString:attachmentString];

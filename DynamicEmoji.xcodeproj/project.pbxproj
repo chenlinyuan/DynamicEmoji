@@ -44,6 +44,7 @@
 		F212C4BF1DF4FB8200C2C9BC /* gifEmotion_13.gif in Resources */ = {isa = PBXBuildFile; fileRef = F212C4BE1DF4FB8200C2C9BC /* gifEmotion_13.gif */; };
 		F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */; };
 		F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7321DFE7575006D72EE /* CFTextContainer.m */; };
+		F229F7361DFE8D1E006D72EE /* CharacterLocationSeeker.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,8 @@
 		F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEmotionLabel.m; sourceTree = "<group>"; };
 		F229F7311DFE7575006D72EE /* CFTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextContainer.h; sourceTree = "<group>"; };
 		F229F7321DFE7575006D72EE /* CFTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextContainer.m; sourceTree = "<group>"; };
+		F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterLocationSeeker.h; sourceTree = "<group>"; };
+		F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterLocationSeeker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,8 @@
 				864A419E1C32220E00839E11 /* CFTextModel.m */,
 				864A419A1C3221A200839E11 /* CFTextView.h */,
 				864A419B1C3221A200839E11 /* CFTextView.m */,
+				F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */,
+				F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */,
 				86DC36531C30DCEB0045F2C6 /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
@@ -434,6 +439,7 @@
 				86DC369F1C30DD0D0045F2C6 /* SDWebImageDownloader.m in Sources */,
 				86DC36A31C30DD0D0045F2C6 /* UIButton+WebCache.m in Sources */,
 				86DC36A61C30DD0D0045F2C6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				F229F7361DFE8D1E006D72EE /* CharacterLocationSeeker.m in Sources */,
 				86DC369E1C30DD0D0045F2C6 /* SDWebImageDecoder.m in Sources */,
 				86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */,
 				86DC369D1C30DD0D0045F2C6 /* SDWebImageCompat.m in Sources */,

@@ -45,6 +45,7 @@
 		F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */; };
 		F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7321DFE7575006D72EE /* CFTextContainer.m */; };
 		F229F7361DFE8D1E006D72EE /* CharacterLocationSeeker.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */; };
+		F229F73C1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,8 @@
 		F229F7321DFE7575006D72EE /* CFTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextContainer.m; sourceTree = "<group>"; };
 		F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterLocationSeeker.h; sourceTree = "<group>"; };
 		F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterLocationSeeker.m; sourceTree = "<group>"; };
+		F229F73A1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterLocationSeeker_TextView.h; sourceTree = "<group>"; };
+		F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterLocationSeeker_TextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +218,8 @@
 				864A419B1C3221A200839E11 /* CFTextView.m */,
 				F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */,
 				F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */,
+				F229F73A1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.h */,
+				F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */,
 				86DC36531C30DCEB0045F2C6 /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
@@ -447,6 +452,7 @@
 				86DC369B1C30DD0D0045F2C6 /* NSData+ImageContentType.m in Sources */,
 				864A419C1C3221A200839E11 /* CFTextView.m in Sources */,
 				86DC36A01C30DD0D0045F2C6 /* SDWebImageDownloaderOperation.m in Sources */,
+				F229F73C1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m in Sources */,
 				864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */,
 				F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */,
 				86DC36A71C30DD0D0045F2C6 /* UIImageView+WebCache.m in Sources */,

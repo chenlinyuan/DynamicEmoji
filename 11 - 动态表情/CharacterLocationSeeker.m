@@ -70,4 +70,9 @@
     return [self.layoutManager truncatedGlyphRangeInLineFragmentForGlyphAtIndex:index].location != NSNotFound;
 }
 
+- (NSRange)truncatedRange {
+    NSRange truncatedrange = [self.layoutManager truncatedGlyphRangeInLineFragmentForGlyphAtIndex:0];
+    return truncatedrange;
+}
+
 @end

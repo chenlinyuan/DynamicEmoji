@@ -42,6 +42,8 @@
 		86DC36A81C30DD0D0045F2C6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC369A1C30DD0D0045F2C6 /* UIView+WebCacheOperation.m */; };
 		F212C4BD1DF4FB4700C2C9BC /* gifEmotion_03.gif in Resources */ = {isa = PBXBuildFile; fileRef = F212C4BC1DF4FB4700C2C9BC /* gifEmotion_03.gif */; };
 		F212C4BF1DF4FB8200C2C9BC /* gifEmotion_13.gif in Resources */ = {isa = PBXBuildFile; fileRef = F212C4BE1DF4FB8200C2C9BC /* gifEmotion_13.gif */; };
+		F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */; };
+		F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7321DFE7575006D72EE /* CFTextContainer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +125,10 @@
 		86DC369A1C30DD0D0045F2C6 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		F212C4BC1DF4FB4700C2C9BC /* gifEmotion_03.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_03.gif; sourceTree = "<group>"; };
 		F212C4BE1DF4FB8200C2C9BC /* gifEmotion_13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_13.gif; sourceTree = "<group>"; };
+		F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEmotionLabel.h; sourceTree = "<group>"; };
+		F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEmotionLabel.m; sourceTree = "<group>"; };
+		F229F7311DFE7575006D72EE /* CFTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextContainer.h; sourceTree = "<group>"; };
+		F229F7321DFE7575006D72EE /* CFTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextContainer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +200,10 @@
 				86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */,
 				86DC36501C30DCEB0045F2C6 /* ViewController.h */,
 				86DC36511C30DCEB0045F2C6 /* ViewController.m */,
+				F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */,
+				F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */,
+				F229F7311DFE7575006D72EE /* CFTextContainer.h */,
+				F229F7321DFE7575006D72EE /* CFTextContainer.m */,
 				864A41BD1C32613300839E11 /* CFTextAttachment.h */,
 				864A41BE1C32613300839E11 /* CFTextAttachment.m */,
 				864A419D1C32220E00839E11 /* CFTextModel.h */,
@@ -432,7 +442,9 @@
 				864A419C1C3221A200839E11 /* CFTextView.m in Sources */,
 				86DC36A01C30DD0D0045F2C6 /* SDWebImageDownloaderOperation.m in Sources */,
 				864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */,
+				F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */,
 				86DC36A71C30DD0D0045F2C6 /* UIImageView+WebCache.m in Sources */,
+				F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */,
 				86DC36A11C30DD0D0045F2C6 /* SDWebImageManager.m in Sources */,
 				86DC36A51C30DD0D0045F2C6 /* UIImage+MultiFormat.m in Sources */,
 				86DC36A21C30DD0D0045F2C6 /* SDWebImagePrefetcher.m in Sources */,

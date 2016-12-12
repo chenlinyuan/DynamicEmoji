@@ -53,9 +53,11 @@
         CFTextAttachment* attachment = [[CFTextAttachment alloc] init];
         attachment.gifName = gifEomtionDict[rangeString];
         if (!_onlyGif) {
+            attachment.mark = YES;
+        }
             UIImage *image = [UIImage sd_animatedGIFNamed:attachment.gifName];
             attachment.image = image;
-        }
+
         NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
         [attributedString replaceCharactersInRange:NSRangeFromString(rangeString) withAttributedString:attachmentString];
     }

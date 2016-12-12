@@ -10,4 +10,5 @@
 
 @interface CFTextAttachment : NSTextAttachment
 @property (nonatomic, copy) NSString *gifName;
+@property (nonatomic) BOOL mark;
 @end

@@ -12,15 +12,17 @@
 
 @implementation CFTextView
 
-- (void)setAttributedText:(NSAttributedString *)attributedText
-{
-    [super setAttributedText:attributedText];
 
+- (instancetype)initWithFrame:(CGRect)frame textContainer:(NSTextContainer *)textContainer {
+    self = [super initWithFrame:frame textContainer:textContainer];
+    if (self) {
+        
+    }
+    return self;
 }
 
-
-- (void)layoutSubviews {
-    [super layoutSubviews];
+- (void)setAttributedText:(NSAttributedString *)attributedText {
+    [super setAttributedText:attributedText];
     for (UIView* subView in self.subviews) {
         if ([subView isKindOfClass:[UIImageView class]]) {
             [subView removeFromSuperview];
@@ -38,16 +40,15 @@
             [self addSubview:imageView];
             UIImage *image = [UIImage sd_animatedGIFNamed:value.gifName];
             imageView.image = image;
-            
-            //            rect.origin.y += rect.size.height-image.size.height;
-            //            rect.size = image.size;
             imageView.frame = rect;
         }
     }];
 }
 
-- (void)layoutIfNeeded {
-    [super layoutIfNeeded];
+
+- (void)layoutSubviews {
+    [super layoutSubviews];
 }
+
 
 @end

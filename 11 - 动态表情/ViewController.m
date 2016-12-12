@@ -10,10 +10,12 @@
 #import "UIImage+GIF.h"
 #import "CFTextModel.h"
 #import "CFTextView.h"
+#import "UIEmotionLabel.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet CFTextView *textView;
-@property (weak, nonatomic) IBOutlet UITextView *textView2;
+
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIEmotionLabel *emotionLabel;
 
 @end
 
@@ -25,16 +27,12 @@
     CFTextModel* model = [[CFTextModel alloc] init];
     model.onlyGif = YES;
     model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/飞翔/飞翔也没人在乎你辗转反侧的要熬几个秋。外人只看结果，/奥特曼自己独撑过程。/点头等你明白了这个道理，便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，/咸蛋超人也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
-    self.textView.attributedText = model.attributedString;
+
+    self.label.attributedText = model.attributedString;
     
     model.onlyGif = NO;
     model.contentString = model.contentString;
-    self.textView2.attributedText = model.attributedString;
+    self.emotionLabel.attributedText = model.attributedString;
 }
-
-//- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-//    self.textView.attributedText = self.textView.attributedText;
-//}
-
 
 @end

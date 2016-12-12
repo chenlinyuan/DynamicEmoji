@@ -19,18 +19,4 @@
     self.bounds = bounds;
 }
 
-//- (CGRect)attachmentBoundsForTextContainer:(NSTextContainer *)textContainer proposedLineFragment:(CGRect)lineFrag glyphPosition:(CGPoint)position characterIndex:(NSUInteger)charIndex {
-//    
-//    if (_mark) {
-//        CGRect rect = CGRectMake(position.x, 0, self.bounds.size.width, self.bounds.size.height);
-//        return rect;
-//    } else {
-//        return CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height);
-//    }
-//}
-
-//- (nullable UIImage *)imageForBounds:(CGRect)imageBounds textContainer:(nullable NSTextContainer *)textContainer characterIndex:(NSUInteger)charIndex {
-//    [super imageForBounds:imageBounds textContainer:textContainer characterIndex:charIndex];
-//}
-
 @end

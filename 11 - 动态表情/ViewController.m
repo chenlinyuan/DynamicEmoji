@@ -9,7 +9,6 @@
 #import "ViewController.h"
 #import "UIImage+GIF.h"
 #import "CFTextModel.h"
-#import "CFTextView.h"
 #import "UIEmotionLabel.h"
 
 @interface ViewController ()
@@ -30,9 +29,10 @@
 
     self.label.attributedText = model.attributedString;
     
-    model.onlyGif = NO;
+    model.onlyGif = YES;
     model.contentString = model.contentString;
     self.emotionLabel.attributedText = model.attributedString;
+    [self.emotionLabel sizeToFit];
 }
 
 @end

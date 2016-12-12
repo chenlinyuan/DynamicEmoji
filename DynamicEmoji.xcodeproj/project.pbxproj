@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77C8F6571DFEF272006B0C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C8F6561DFEF272006B0C3E /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
+		77C8F65A1DFEF700006B0C3E /* UILabel+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8F6591DFEF700006B0C3E /* UILabel+alas.m */; settings = {ASSET_TAGS = (); }; };
 		860F85771C36501F00D353C2 /* gifEmotion_0.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85701C36501F00D353C2 /* gifEmotion_0.gif */; };
 		860F85781C36501F00D353C2 /* gifEmotion_1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85711C36501F00D353C2 /* gifEmotion_1.gif */; };
 		860F85791C36501F00D353C2 /* gifEmotion_2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85721C36501F00D353C2 /* gifEmotion_2.gif */; };
@@ -14,14 +16,12 @@
 		860F857B1C36501F00D353C2 /* gifEmotion_4.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85741C36501F00D353C2 /* gifEmotion_4.gif */; };
 		860F857C1C36501F00D353C2 /* gifEmotion_5.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85751C36501F00D353C2 /* gifEmotion_5.gif */; };
 		860F857D1C36501F00D353C2 /* gifEmotion_6.gif in Resources */ = {isa = PBXBuildFile; fileRef = 860F85761C36501F00D353C2 /* gifEmotion_6.gif */; };
-		864A419C1C3221A200839E11 /* CFTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419B1C3221A200839E11 /* CFTextView.m */; };
 		864A419F1C32220E00839E11 /* CFTextModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A419E1C32220E00839E11 /* CFTextModel.m */; };
 		864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A41A01C32227300839E11 /* EmotionGifList.plist */; };
 		864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = 864A41BE1C32613300839E11 /* CFTextAttachment.m */; };
 		86DC364C1C30DCEB0045F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364B1C30DCEB0045F2C6 /* main.m */; };
 		86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */; };
 		86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC36511C30DCEB0045F2C6 /* ViewController.m */; };
-		86DC36551C30DCEB0045F2C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DC36531C30DCEB0045F2C6 /* Main.storyboard */; };
 		86DC36571C30DCEB0045F2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DC36561C30DCEB0045F2C6 /* Assets.xcassets */; };
 		86DC365A1C30DCEB0045F2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */; };
 		86DC36651C30DCEB0045F2C6 /* _1_______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC36641C30DCEB0045F2C6 /* _1_______Tests.m */; };
@@ -43,9 +43,6 @@
 		F212C4BD1DF4FB4700C2C9BC /* gifEmotion_03.gif in Resources */ = {isa = PBXBuildFile; fileRef = F212C4BC1DF4FB4700C2C9BC /* gifEmotion_03.gif */; };
 		F212C4BF1DF4FB8200C2C9BC /* gifEmotion_13.gif in Resources */ = {isa = PBXBuildFile; fileRef = F212C4BE1DF4FB8200C2C9BC /* gifEmotion_13.gif */; };
 		F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */; };
-		F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7321DFE7575006D72EE /* CFTextContainer.m */; };
-		F229F7361DFE8D1E006D72EE /* CharacterLocationSeeker.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */; };
-		F229F73C1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +63,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		77C8F6561DFEF272006B0C3E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		77C8F6581DFEF700006B0C3E /* UILabel+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+alas.h"; sourceTree = "<group>"; };
+		77C8F6591DFEF700006B0C3E /* UILabel+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+alas.m"; sourceTree = "<group>"; };
 		860F85701C36501F00D353C2 /* gifEmotion_0.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_0.gif; sourceTree = "<group>"; };
 		860F85711C36501F00D353C2 /* gifEmotion_1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_1.gif; sourceTree = "<group>"; };
 		860F85721C36501F00D353C2 /* gifEmotion_2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_2.gif; sourceTree = "<group>"; };
@@ -73,8 +73,6 @@
 		860F85741C36501F00D353C2 /* gifEmotion_4.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_4.gif; sourceTree = "<group>"; };
 		860F85751C36501F00D353C2 /* gifEmotion_5.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_5.gif; sourceTree = "<group>"; };
 		860F85761C36501F00D353C2 /* gifEmotion_6.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_6.gif; sourceTree = "<group>"; };
-		864A419A1C3221A200839E11 /* CFTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextView.h; sourceTree = "<group>"; };
-		864A419B1C3221A200839E11 /* CFTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextView.m; sourceTree = "<group>"; };
 		864A419D1C32220E00839E11 /* CFTextModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextModel.h; sourceTree = "<group>"; };
 		864A419E1C32220E00839E11 /* CFTextModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextModel.m; sourceTree = "<group>"; };
 		864A41A01C32227300839E11 /* EmotionGifList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionGifList.plist; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		86DC36501C30DCEB0045F2C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		86DC36511C30DCEB0045F2C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		86DC36541C30DCEB0045F2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		86DC36561C30DCEB0045F2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DC36591C30DCEB0045F2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86DC365B1C30DCEB0045F2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -129,12 +126,6 @@
 		F212C4BE1DF4FB8200C2C9BC /* gifEmotion_13.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = gifEmotion_13.gif; sourceTree = "<group>"; };
 		F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEmotionLabel.h; sourceTree = "<group>"; };
 		F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEmotionLabel.m; sourceTree = "<group>"; };
-		F229F7311DFE7575006D72EE /* CFTextContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFTextContainer.h; sourceTree = "<group>"; };
-		F229F7321DFE7575006D72EE /* CFTextContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFTextContainer.m; sourceTree = "<group>"; };
-		F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterLocationSeeker.h; sourceTree = "<group>"; };
-		F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterLocationSeeker.m; sourceTree = "<group>"; };
-		F229F73A1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CharacterLocationSeeker_TextView.h; sourceTree = "<group>"; };
-		F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CharacterLocationSeeker_TextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,24 +199,18 @@
 				86DC36511C30DCEB0045F2C6 /* ViewController.m */,
 				F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */,
 				F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */,
-				F229F7311DFE7575006D72EE /* CFTextContainer.h */,
-				F229F7321DFE7575006D72EE /* CFTextContainer.m */,
 				864A41BD1C32613300839E11 /* CFTextAttachment.h */,
 				864A41BE1C32613300839E11 /* CFTextAttachment.m */,
 				864A419D1C32220E00839E11 /* CFTextModel.h */,
 				864A419E1C32220E00839E11 /* CFTextModel.m */,
-				864A419A1C3221A200839E11 /* CFTextView.h */,
-				864A419B1C3221A200839E11 /* CFTextView.m */,
-				F229F7341DFE8D1E006D72EE /* CharacterLocationSeeker.h */,
-				F229F7351DFE8D1E006D72EE /* CharacterLocationSeeker.m */,
-				F229F73A1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.h */,
-				F229F73B1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m */,
-				86DC36531C30DCEB0045F2C6 /* Main.storyboard */,
+				77C8F6561DFEF272006B0C3E /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
 				86DC365B1C30DCEB0045F2C6 /* Info.plist */,
 				864A41A21C32227900839E11 /* GifEmtions */,
 				86DC364A1C30DCEB0045F2C6 /* Supporting Files */,
+				77C8F6581DFEF700006B0C3E /* UILabel+alas.h */,
+				77C8F6591DFEF700006B0C3E /* UILabel+alas.m */,
 			);
 			name = DynamicEmoji;
 			path = "11 - 动态表情";
@@ -359,7 +344,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0710;
-				ORGANIZATIONNAME = "于传峰";
+				ORGANIZATIONNAME = alas743k;
 				TargetAttributes = {
 					86DC36461C30DCEB0045F2C6 = {
 						CreatedOnToolsVersion = 7.1;
@@ -409,10 +394,10 @@
 				860F857B1C36501F00D353C2 /* gifEmotion_4.gif in Resources */,
 				860F857D1C36501F00D353C2 /* gifEmotion_6.gif in Resources */,
 				F212C4BF1DF4FB8200C2C9BC /* gifEmotion_13.gif in Resources */,
+				77C8F6571DFEF272006B0C3E /* Main.storyboard in Resources */,
 				864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */,
 				86DC365A1C30DCEB0045F2C6 /* LaunchScreen.storyboard in Resources */,
 				86DC36571C30DCEB0045F2C6 /* Assets.xcassets in Resources */,
-				86DC36551C30DCEB0045F2C6 /* Main.storyboard in Resources */,
 				860F85771C36501F00D353C2 /* gifEmotion_0.gif in Resources */,
 				860F85781C36501F00D353C2 /* gifEmotion_1.gif in Resources */,
 			);
@@ -444,19 +429,16 @@
 				86DC369F1C30DD0D0045F2C6 /* SDWebImageDownloader.m in Sources */,
 				86DC36A31C30DD0D0045F2C6 /* UIButton+WebCache.m in Sources */,
 				86DC36A61C30DD0D0045F2C6 /* UIImageView+HighlightedWebCache.m in Sources */,
-				F229F7361DFE8D1E006D72EE /* CharacterLocationSeeker.m in Sources */,
 				86DC369E1C30DD0D0045F2C6 /* SDWebImageDecoder.m in Sources */,
 				86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */,
 				86DC369D1C30DD0D0045F2C6 /* SDWebImageCompat.m in Sources */,
 				86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */,
 				86DC369B1C30DD0D0045F2C6 /* NSData+ImageContentType.m in Sources */,
-				864A419C1C3221A200839E11 /* CFTextView.m in Sources */,
 				86DC36A01C30DD0D0045F2C6 /* SDWebImageDownloaderOperation.m in Sources */,
-				F229F73C1DFEA6F9006D72EE /* CharacterLocationSeeker_TextView.m in Sources */,
 				864A41BF1C32613300839E11 /* CFTextAttachment.m in Sources */,
 				F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */,
 				86DC36A71C30DD0D0045F2C6 /* UIImageView+WebCache.m in Sources */,
-				F229F7331DFE7575006D72EE /* CFTextContainer.m in Sources */,
+				77C8F65A1DFEF700006B0C3E /* UILabel+alas.m in Sources */,
 				86DC36A11C30DD0D0045F2C6 /* SDWebImageManager.m in Sources */,
 				86DC36A51C30DD0D0045F2C6 /* UIImage+MultiFormat.m in Sources */,
 				86DC36A21C30DD0D0045F2C6 /* SDWebImagePrefetcher.m in Sources */,
@@ -498,14 +480,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		86DC36531C30DCEB0045F2C6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				86DC36541C30DCEB0045F2C6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -604,9 +578,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "11 - 动态表情/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-1-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -615,9 +591,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "11 - 动态表情/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "yuchuanfeng.-1-------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

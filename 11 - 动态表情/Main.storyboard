@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3ed-PL-vy1">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="hVe-6n-Tx4">
+            <objects>
+                <viewController storyboardIdentifier="Main" id="3ed-PL-vy1" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t0b-LC-4wJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ey1-ic-onz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hK1-KP-C6F">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6yI-QO-aTs" customClass="UIEmotionLabel">
+                                <rect key="frame" x="24" y="28" width="42" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="200" id="g0w-s7-Mic"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6yI-QO-aTs" firstAttribute="leading" secondItem="hK1-KP-C6F" secondAttribute="leadingMargin" constant="8" id="5CK-QT-6ni"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="6yI-QO-aTs" secondAttribute="trailing" constant="8" id="Lgd-Sf-DOv"/>
+                            <constraint firstItem="ey1-ic-onz" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6yI-QO-aTs" secondAttribute="bottom" constant="8" id="p5U-Du-Fvk"/>
+                            <constraint firstItem="6yI-QO-aTs" firstAttribute="top" secondItem="t0b-LC-4wJ" secondAttribute="bottom" constant="8" id="zJ8-v2-hXk"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emotionLabel" destination="6yI-QO-aTs" id="oqb-Cz-QIb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vfx-QB-W0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="351"/>
+        </scene>
+    </scenes>
+</document>

@@ -14,7 +14,7 @@
 @implementation UILabel (alas)
 
 @dynamic textContainer,textStorage,layoutManager;
-
+@dynamic textContainerClass,textStorageClass,layoutManagerClass;
 char textStorageKey;
 char textContainerKey;
 char layoutManagerKey;
@@ -22,7 +22,7 @@ char layoutManagerKey;
 - (NSTextContainer *)textContainer {
     NSTextContainer *obj = objc_getAssociatedObject(self, &textContainerKey);
     if (!obj) {
-        obj = [NSTextContainer new];
+        obj = [[[self class] textContainerClass] new];
         self.textContainer = obj;
     }
     return obj;
@@ -31,7 +31,7 @@ char layoutManagerKey;
 - (NSLayoutManager *)layoutManager {
     NSLayoutManager *obj = objc_getAssociatedObject(self, &layoutManagerKey);
     if (!obj) {
-        obj = [NSLayoutManager new];
+        obj = [[[self class] layoutManagerClass] new];
         [obj addTextContainer:self.textContainer];
         self.layoutManager = obj;
     }
@@ -41,7 +41,7 @@ char layoutManagerKey;
 - (NSTextStorage *)textStorage {
     NSTextStorage *obj = objc_getAssociatedObject(self, &textStorageKey);
     if (!obj) {
-        obj = [NSTextStorage new];
+        obj = [[[self class] textStorageClass] new];
         [obj addLayoutManager:self.layoutManager];
         self.textStorage = obj;
     }
@@ -58,6 +58,22 @@ char layoutManagerKey;
 
 - (void)setTextStorage:(NSTextStorage *)textStorage {
     objc_setAssociatedObject(self, &textStorageKey, textStorage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+char textStorageClassKey;
+char layoutManagerClassKey;
+char textContainerClassKey;
+
++ (Class)textStorageClass {
+    return [NSTextStorage class];
+}
+
++ (Class)layoutManagerClass {
+    return [NSLayoutManager class];
+}
+
++ (Class)textContainerClass {
+    return [NSTextContainer class];
 }
 
 #pragma mark - Truncation

@@ -30,6 +30,13 @@
     }];
     self.emotionLabel.attributedText = [self.emotionLabel attributedStringWithString:string];
     [self.emotionLabel sizeToFit];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(preferredContentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification
+                                               object:nil];
+}
+
+-(void)preferredContentSizeChanged:(NSNotification *)notification{
+    self.emotionLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
 }
 
 - (NSString*)randomString {
@@ -48,7 +55,7 @@
         NSString *s = [[NSString alloc] initWithData:data encoding:gbkEncoding];
         [string appendString:s];
     }
-    return [string copy];
+    return [string mutableCopy];
 }
 
 @end

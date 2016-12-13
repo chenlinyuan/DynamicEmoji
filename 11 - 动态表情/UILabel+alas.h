@@ -18,4 +18,5 @@
 - (BOOL)isTruncated;
 - (NSString *)truncatedText;
 - (CGRect)contentRectofRange:(NSRange)range;
+- (NSAttributedString*)attributedStringWithString:(NSString*)contentString;
 @end

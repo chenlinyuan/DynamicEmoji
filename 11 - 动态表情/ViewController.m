@@ -7,13 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "UIImage+GIF.h"
-#import "CFTextModel.h"
 #import "UIEmotionLabel.h"
+#import "UILabel+alas.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIEmotionLabel *emotionLabel;
 
 @end
@@ -23,16 +22,33 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    CFTextModel* model = [[CFTextModel alloc] init];
-    model.onlyGif = YES;
-    model.contentString = @"/咸蛋超人“没人在乎你怎样在深夜痛哭，/飞翔/飞翔/飞翔也没人在乎你辗转反侧的要熬几个秋。外人只看结果，/奥特曼自己独撑过程。/点头等你明白了这个道理，便不会再在人前矫情，/我撞四处诉说以求宽慰。/烧烤”当你知道了许多真实、虚假的东西，/咸蛋超人也就没有那么多酸情了。你越来越沉默，越来越不想说。/心烦";
-
-    self.label.attributedText = model.attributedString;
-    
-    model.onlyGif = YES;
-    model.contentString = model.contentString;
-    self.emotionLabel.attributedText = model.attributedString;
+    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 3000);
+    NSMutableString *string = [NSMutableString new];
+    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 150)];
+    [indexSet enumerateIndexesWithOptions:NSEnumerationConcurrent usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
+        [string appendString:[NSString stringWithFormat:@"%@/%03zd",[self randomString],idx]];
+    }];
+    self.emotionLabel.attributedText = [self.emotionLabel attributedStringWithString:string];
     [self.emotionLabel sizeToFit];
+}
+
+- (NSString*)randomString {
+    NSMutableString *string = [NSMutableString string];
+    NSInteger count = arc4random_uniform(9);
+    for (NSInteger i = 0; i < count; i++) {
+        NSStringEncoding gbkEncoding = CFStringConvertEncodingToNSStringEncoding(kCFStringEncodingGB_18030_2000);
+        
+        NSInteger randomH = 0xA1+arc4random()%(0xFE - 0xA1+1);
+        
+        NSInteger randomL = 0xB0+arc4random()%(0xF7 - 0xB0+1);
+        
+        NSInteger number = (randomH<<8)+randomL;
+        NSData *data = [NSData dataWithBytes:&number length:2];
+        
+        NSString *s = [[NSString alloc] initWithData:data encoding:gbkEncoding];
+        [string appendString:s];
+    }
+    return [string copy];
 }
 
 @end

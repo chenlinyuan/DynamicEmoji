@@ -14,7 +14,7 @@
 @implementation UILabel (alas)
 
 @dynamic textContainer,textStorage,layoutManager;
-@dynamic textContainerClass,textStorageClass,layoutManagerClass;
+//@dynamic textContainerClass,textStorageClass,layoutManagerClass;
 char textStorageKey;
 char textContainerKey;
 char layoutManagerKey;
@@ -60,9 +60,9 @@ char layoutManagerKey;
     objc_setAssociatedObject(self, &textStorageKey, textStorage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 
-char textStorageClassKey;
-char layoutManagerClassKey;
-char textContainerClassKey;
+//char textStorageClassKey;
+//char layoutManagerClassKey;
+//char textContainerClassKey;
 
 + (Class)textStorageClass {
     return [NSTextStorage class];

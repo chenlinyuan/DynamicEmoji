@@ -1,59 +1,91 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="3ed-PL-vy1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="9Md-oh-FOX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="hVe-6n-Tx4">
+        <scene sceneID="BWr-t6-hV2">
             <objects>
-                <viewController storyboardIdentifier="Main" id="3ed-PL-vy1" customClass="ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="t0b-LC-4wJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="ey1-ic-onz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hK1-KP-C6F">
+                <viewController id="9Md-oh-FOX" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Yfh-Vx-77K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFr-1e-4us">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhU-Or-SZD" customClass="UIEmotionLabel">
-                                        <rect key="frame" x="0.0" y="20" width="375" height="21"/>
-                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="bhU-Or-SZD" firstAttribute="centerX" secondItem="qFr-1e-4us" secondAttribute="centerX" id="fTw-8e-SkL"/>
-                                    <constraint firstItem="bhU-Or-SZD" firstAttribute="top" secondItem="qFr-1e-4us" secondAttribute="top" constant="20" id="nOv-jh-TIW"/>
-                                    <constraint firstItem="bhU-Or-SZD" firstAttribute="width" secondItem="qFr-1e-4us" secondAttribute="width" id="qCB-UW-c2w"/>
-                                </constraints>
-                            </scrollView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="zPO-Md-yNg">
+                                <rect key="frame" x="0.0" y="165" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <barButtonItem tag="1" title="Item" id="J5h-1S-Gyf">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="unt-qg-d11"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="2" title="Item" id="IFJ-Nt-aN6">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="sfp-p4-BZJ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="3" title="Item" id="EV4-ap-bIs">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="KQc-rt-Uzr"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="4" title="Item" id="ZRu-Ig-lJh">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="iJi-Q6-HL0"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="5" title="Item" id="DOo-hy-O0U">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="V9h-iz-NQC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="6" title="Item" id="ord-ON-THR">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="R5b-X1-sKZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem tag="7" title="Item" id="IN1-t4-0JR">
+                                        <connections>
+                                            <action selector="addEmoji:" destination="9Md-oh-FOX" id="U7T-xO-Rke"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="goX-I0-xSR" customClass="ALTextView">
+                                <rect key="frame" x="15" y="624" width="344" height="43"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="我是大佬"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="delegate" destination="9Md-oh-FOX" id="hvi-QL-phm"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="qFr-1e-4us" firstAttribute="width" secondItem="hK1-KP-C6F" secondAttribute="width" id="9fY-Le-CjQ"/>
-                            <constraint firstItem="qFr-1e-4us" firstAttribute="centerX" secondItem="hK1-KP-C6F" secondAttribute="centerX" id="KiT-XM-OsQ"/>
-                            <constraint firstItem="qFr-1e-4us" firstAttribute="centerY" secondItem="hK1-KP-C6F" secondAttribute="centerY" id="U8K-i2-7QO"/>
-                            <constraint firstItem="qFr-1e-4us" firstAttribute="height" secondItem="hK1-KP-C6F" secondAttribute="height" id="UGM-Cu-pyI"/>
-                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="emotionLabel" destination="bhU-Or-SZD" id="Bem-oQ-ja4"/>
-                        <outlet property="scrollView" destination="qFr-1e-4us" id="J7U-qv-Ir2"/>
+                        <outlet property="textView" destination="goX-I0-xSR" id="dzz-bG-95F"/>
+                        <outlet property="toolBar" destination="zPO-Md-yNg" id="UCf-8q-CgZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vfx-QB-W0Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5tR-u3-OGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="166.5" y="350.5"/>
+            <point key="canvasLocation" x="13.5" y="211.5"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -14,9 +14,9 @@
 @property (strong, nonatomic) NSLayoutManager *layoutManager;
 @property (strong, nonatomic) NSTextContainer *textContainer;
 
-@property (class, nonatomic) Class textStorageClass;
-@property (class, nonatomic) Class layoutManagerClass;
-@property (class, nonatomic) Class textContainerClass;
+//@property (class, nonatomic) Class textStorageClass;
+//@property (class, nonatomic) Class layoutManagerClass;
+//@property (class, nonatomic) Class textContainerClass;
 
 - (BOOL)isTruncated;
 - (NSRange)truncatedRange;

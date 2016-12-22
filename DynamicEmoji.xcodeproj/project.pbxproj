@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		77C8F6571DFEF272006B0C3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 77C8F6561DFEF272006B0C3E /* Main.storyboard */; };
 		77C8F65A1DFEF700006B0C3E /* UILabel+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8F6591DFEF700006B0C3E /* UILabel+alas.m */; };
 		864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A41A01C32227300839E11 /* EmotionGifList.plist */; };
 		86DC364C1C30DCEB0045F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364B1C30DCEB0045F2C6 /* main.m */; };
@@ -30,6 +29,7 @@
 		86DC36A71C30DD0D0045F2C6 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC36981C30DD0D0045F2C6 /* UIImageView+WebCache.m */; };
 		86DC36A81C30DD0D0045F2C6 /* UIView+WebCacheOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC369A1C30DD0D0045F2C6 /* UIView+WebCacheOperation.m */; };
 		F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */; };
+		F23FC9EF1E08C31F00D40C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F23FC9EE1E08C31F00D40C7A /* Main.storyboard */; };
 		F2CFB9B11DFFD13A009044B3 /* 001@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9241DFFD13A009044B3 /* 001@2x.gif */; };
 		F2CFB9B21DFFD13A009044B3 /* 002@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9251DFFD13A009044B3 /* 002@2x.gif */; };
 		F2CFB9B31DFFD13A009044B3 /* 003@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9261DFFD13A009044B3 /* 003@2x.gif */; };
@@ -172,10 +172,10 @@
 		F2CFBA3C1DFFD13A009044B3 /* 140@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9AF1DFFD13A009044B3 /* 140@2x.gif */; };
 		F2CFBA3D1DFFD13A009044B3 /* 141@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9B01DFFD13A009044B3 /* 141@2x.gif */; };
 		F2CFBA401DFFE3AD009044B3 /* NSTextAttachment+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFBA3F1DFFE3AD009044B3 /* NSTextAttachment+alas.m */; };
+		F2FC98F41E07D39B006EA643 /* ALTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC98F31E07D39B006EA643 /* ALTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		77C8F6561DFEF272006B0C3E /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		77C8F6581DFEF700006B0C3E /* UILabel+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+alas.h"; sourceTree = "<group>"; };
 		77C8F6591DFEF700006B0C3E /* UILabel+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+alas.m"; sourceTree = "<group>"; };
 		864A41A01C32227300839E11 /* EmotionGifList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionGifList.plist; sourceTree = "<group>"; };
@@ -219,6 +219,7 @@
 		86DC369A1C30DD0D0045F2C6 /* UIView+WebCacheOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+WebCacheOperation.m"; sourceTree = "<group>"; };
 		F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIEmotionLabel.h; sourceTree = "<group>"; };
 		F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIEmotionLabel.m; sourceTree = "<group>"; };
+		F23FC9EE1E08C31F00D40C7A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		F2CFB9241DFFD13A009044B3 /* 001@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "001@2x.gif"; path = "Face_gif/001@2x.gif"; sourceTree = "<group>"; };
 		F2CFB9251DFFD13A009044B3 /* 002@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "002@2x.gif"; path = "Face_gif/002@2x.gif"; sourceTree = "<group>"; };
 		F2CFB9261DFFD13A009044B3 /* 003@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "003@2x.gif"; path = "Face_gif/003@2x.gif"; sourceTree = "<group>"; };
@@ -362,6 +363,8 @@
 		F2CFB9B01DFFD13A009044B3 /* 141@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "141@2x.gif"; path = "Face_gif/141@2x.gif"; sourceTree = "<group>"; };
 		F2CFBA3E1DFFE3AD009044B3 /* NSTextAttachment+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+alas.h"; sourceTree = "<group>"; };
 		F2CFBA3F1DFFE3AD009044B3 /* NSTextAttachment+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+alas.m"; sourceTree = "<group>"; };
+		F2FC98F21E07D39B006EA643 /* ALTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTextView.h; sourceTree = "<group>"; };
+		F2FC98F31E07D39B006EA643 /* ALTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -402,7 +405,9 @@
 				86DC36511C30DCEB0045F2C6 /* ViewController.m */,
 				F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */,
 				F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */,
-				77C8F6561DFEF272006B0C3E /* Main.storyboard */,
+				F2FC98F21E07D39B006EA643 /* ALTextView.h */,
+				F2FC98F31E07D39B006EA643 /* ALTextView.m */,
+				F23FC9EE1E08C31F00D40C7A /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
 				86DC365B1C30DCEB0045F2C6 /* Info.plist */,
@@ -733,7 +738,6 @@
 				F2CFBA011DFFD13A009044B3 /* 081@2x.gif in Resources */,
 				F2CFBA351DFFD13A009044B3 /* 133@2x.gif in Resources */,
 				F2CFB9EF1DFFD13A009044B3 /* 063@2x.gif in Resources */,
-				77C8F6571DFEF272006B0C3E /* Main.storyboard in Resources */,
 				F2CFBA381DFFD13A009044B3 /* 136@2x.gif in Resources */,
 				F2CFB9E41DFFD13A009044B3 /* 052@2x.gif in Resources */,
 				F2CFBA3C1DFFD13A009044B3 /* 140@2x.gif in Resources */,
@@ -787,6 +791,7 @@
 				F2CFB9BE1DFFD13A009044B3 /* 014@2x.gif in Resources */,
 				F2CFBA121DFFD13A009044B3 /* 098@2x.gif in Resources */,
 				F2CFBA301DFFD13A009044B3 /* 128@2x.gif in Resources */,
+				F23FC9EF1E08C31F00D40C7A /* Main.storyboard in Resources */,
 				F2CFB9E91DFFD13A009044B3 /* 057@2x.gif in Resources */,
 				F2CFB9C81DFFD13A009044B3 /* 024@2x.gif in Resources */,
 				F2CFBA1D1DFFD13A009044B3 /* 109@2x.gif in Resources */,
@@ -848,6 +853,7 @@
 				86DC36A11C30DD0D0045F2C6 /* SDWebImageManager.m in Sources */,
 				86DC36A51C30DD0D0045F2C6 /* UIImage+MultiFormat.m in Sources */,
 				86DC36A21C30DD0D0045F2C6 /* SDWebImagePrefetcher.m in Sources */,
+				F2FC98F41E07D39B006EA643 /* ALTextView.m in Sources */,
 				86DC364C1C30DCEB0045F2C6 /* main.m in Sources */,
 				86DC369C1C30DD0D0045F2C6 /* SDImageCache.m in Sources */,
 			);

@@ -11,9 +11,18 @@
 
 @implementation NSTextAttachment (alas)
 
-@dynamic imageName;
+@dynamic imageName,string;
 
 char imageNameKey;
+char stringKey;
+
+- (NSString *)string {
+    return objc_getAssociatedObject(self, &stringKey);
+}
+
+- (void)setString:(NSString *)string {
+    objc_setAssociatedObject(self, &stringKey, string, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
 
 - (NSString *)imageName {
     return objc_getAssociatedObject(self, &imageNameKey);

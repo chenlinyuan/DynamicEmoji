@@ -11,5 +11,6 @@
 @interface NSTextAttachment (alas)
 
 @property (nonatomic, strong) NSString *imageName;
+@property (nonatomic, copy) NSString *string;
 
 @end

@@ -9,11 +9,12 @@
 #import "ViewController.h"
 #import "UIEmotionLabel.h"
 #import "UILabel+alas.h"
+#import "ALTextView.h"
 
 @interface ViewController ()
 
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIEmotionLabel *emotionLabel;
+@property (weak, nonatomic) IBOutlet ALTextView *textView;
+@property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
 
 @end
 
@@ -22,24 +23,36 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    _scrollView.contentSize = CGSizeMake(self.view.bounds.size.width, 3000);
-    NSMutableString *string = [NSMutableString new];
-    NSMutableIndexSet *indexSet = [NSMutableIndexSet indexSetWithIndexesInRange:NSMakeRange(0, 150)];
-    [indexSet enumerateIndexesWithOptions:NSEnumerationConcurrent usingBlock:^(NSUInteger idx, BOOL * _Nonnull stop) {
-        [string appendString:[NSString stringWithFormat:@"%@/%03zd",[self randomString],idx]];
-    }];
-    self.emotionLabel.attributedText = [self.emotionLabel attributedStringWithString:string];
-    [self.emotionLabel sizeToFit];
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(preferredContentSizeChanged:) name:UIContentSizeCategoryDidChangeNotification
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillAppear:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillDisappear:) name:UIKeyboardWillHideNotification object:nil];
+//    _textView.inputAccessoryView = _toolBar;
 }
 
--(void)preferredContentSizeChanged:(NSNotification *)notification{
-    self.emotionLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+- (void)keyboardWillAppear:(NSNotification*)noti {
+    if (noti) {
+        NSDictionary *userInfo = noti.userInfo;
+        CGRect bounds = [[userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        CGFloat height = bounds.size.height;
+        [UIView animateWithDuration:.25 animations:^{
+            _textView.transform = CGAffineTransformMakeTranslation(0, -height);
+        } completion:^(BOOL finished) {
+            
+        }];
+    }
+}
+
+- (void)keyboardWillDisappear:(NSNotification*)noti {
+    [UIView animateWithDuration:.25 animations:^{
+        _textView.transform = CGAffineTransformIdentity;
+    }];
+}
+
+- (IBAction)addEmoji:(UIBarButtonItem*)sender {
+    [_textView appendText:[NSString stringWithFormat:@"/%03zd",sender.tag]];
 }
 
 - (NSString*)randomString {
+    //return @"";
     NSMutableString *string = [NSMutableString string];
     NSInteger count = arc4random_uniform(9);
     for (NSInteger i = 0; i < count; i++) {

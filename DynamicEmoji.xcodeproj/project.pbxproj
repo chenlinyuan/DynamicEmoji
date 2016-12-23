@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		77C8F65A1DFEF700006B0C3E /* UILabel+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = 77C8F6591DFEF700006B0C3E /* UILabel+alas.m */; };
-		864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 864A41A01C32227300839E11 /* EmotionGifList.plist */; };
 		86DC364C1C30DCEB0045F2C6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364B1C30DCEB0045F2C6 /* main.m */; };
 		86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */; };
-		86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC36511C30DCEB0045F2C6 /* ViewController.m */; };
 		86DC36571C30DCEB0045F2C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86DC36561C30DCEB0045F2C6 /* Assets.xcassets */; };
 		86DC365A1C30DCEB0045F2C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */; };
 		86DC369B1C30DD0D0045F2C6 /* NSData+ImageContentType.m in Sources */ = {isa = PBXBuildFile; fileRef = 86DC367F1C30DD0D0045F2C6 /* NSData+ImageContentType.m */; };
@@ -172,19 +170,18 @@
 		F2CFBA3C1DFFD13A009044B3 /* 140@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9AF1DFFD13A009044B3 /* 140@2x.gif */; };
 		F2CFBA3D1DFFD13A009044B3 /* 141@2x.gif in Resources */ = {isa = PBXBuildFile; fileRef = F2CFB9B01DFFD13A009044B3 /* 141@2x.gif */; };
 		F2CFBA401DFFE3AD009044B3 /* NSTextAttachment+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFBA3F1DFFE3AD009044B3 /* NSTextAttachment+alas.m */; };
+		F2D15EF81E0CF6A5008232DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D15EF71E0CF6A5008232DA /* ViewController.m */; };
+		F2D15EFB1E0D0EDC008232DA /* NSString+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */; };
 		F2FC98F41E07D39B006EA643 /* ALTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC98F31E07D39B006EA643 /* ALTextView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		77C8F6581DFEF700006B0C3E /* UILabel+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+alas.h"; sourceTree = "<group>"; };
 		77C8F6591DFEF700006B0C3E /* UILabel+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+alas.m"; sourceTree = "<group>"; };
-		864A41A01C32227300839E11 /* EmotionGifList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = EmotionGifList.plist; sourceTree = "<group>"; };
 		86DC36471C30DCEB0045F2C6 /* DynamicEmoji.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicEmoji.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86DC364B1C30DCEB0045F2C6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		86DC364D1C30DCEB0045F2C6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		86DC36501C30DCEB0045F2C6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		86DC36511C30DCEB0045F2C6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		86DC36561C30DCEB0045F2C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86DC36591C30DCEB0045F2C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86DC365B1C30DCEB0045F2C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -363,6 +360,10 @@
 		F2CFB9B01DFFD13A009044B3 /* 141@2x.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = "141@2x.gif"; path = "Face_gif/141@2x.gif"; sourceTree = "<group>"; };
 		F2CFBA3E1DFFE3AD009044B3 /* NSTextAttachment+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTextAttachment+alas.h"; sourceTree = "<group>"; };
 		F2CFBA3F1DFFE3AD009044B3 /* NSTextAttachment+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextAttachment+alas.m"; sourceTree = "<group>"; };
+		F2D15EF61E0CF6A5008232DA /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F2D15EF71E0CF6A5008232DA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F2D15EF91E0D0EDC008232DA /* NSString+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+alas.h"; sourceTree = "<group>"; };
+		F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+alas.m"; sourceTree = "<group>"; };
 		F2FC98F21E07D39B006EA643 /* ALTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTextView.h; sourceTree = "<group>"; };
 		F2FC98F31E07D39B006EA643 /* ALTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -401,12 +402,14 @@
 				86DC367D1C30DD0D0045F2C6 /* SDWebImage */,
 				86DC364D1C30DCEB0045F2C6 /* AppDelegate.h */,
 				86DC364E1C30DCEB0045F2C6 /* AppDelegate.m */,
-				86DC36501C30DCEB0045F2C6 /* ViewController.h */,
-				86DC36511C30DCEB0045F2C6 /* ViewController.m */,
+				F2D15EF61E0CF6A5008232DA /* ViewController.h */,
+				F2D15EF71E0CF6A5008232DA /* ViewController.m */,
 				F229F72E1DFE3C3C006D72EE /* UIEmotionLabel.h */,
 				F229F72F1DFE3C3C006D72EE /* UIEmotionLabel.m */,
 				F2FC98F21E07D39B006EA643 /* ALTextView.h */,
 				F2FC98F31E07D39B006EA643 /* ALTextView.m */,
+				F2D15EF91E0D0EDC008232DA /* NSString+alas.h */,
+				F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */,
 				F23FC9EE1E08C31F00D40C7A /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
@@ -424,7 +427,6 @@
 		86DC364A1C30DCEB0045F2C6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				864A41A01C32227300839E11 /* EmotionGifList.plist */,
 				86DC364B1C30DCEB0045F2C6 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -753,7 +755,6 @@
 				F2CFB9D11DFFD13A009044B3 /* 033@2x.gif in Resources */,
 				F2CFBA241DFFD13A009044B3 /* 116@2x.gif in Resources */,
 				F2CFBA391DFFD13A009044B3 /* 137@2x.gif in Resources */,
-				864A41A11C32227300839E11 /* EmotionGifList.plist in Resources */,
 				F2CFB9B41DFFD13A009044B3 /* 004@2x.gif in Resources */,
 				F2CFBA161DFFD13A009044B3 /* 102@2x.gif in Resources */,
 				F2CFBA031DFFD13A009044B3 /* 083@2x.gif in Resources */,
@@ -835,6 +836,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2D15EF81E0CF6A5008232DA /* ViewController.m in Sources */,
 				86DC36A81C30DD0D0045F2C6 /* UIView+WebCacheOperation.m in Sources */,
 				F2CFBA401DFFE3AD009044B3 /* NSTextAttachment+alas.m in Sources */,
 				86DC36A41C30DD0D0045F2C6 /* UIImage+GIF.m in Sources */,
@@ -842,13 +844,13 @@
 				86DC36A31C30DD0D0045F2C6 /* UIButton+WebCache.m in Sources */,
 				86DC36A61C30DD0D0045F2C6 /* UIImageView+HighlightedWebCache.m in Sources */,
 				86DC369E1C30DD0D0045F2C6 /* SDWebImageDecoder.m in Sources */,
-				86DC36521C30DCEB0045F2C6 /* ViewController.m in Sources */,
 				86DC369D1C30DD0D0045F2C6 /* SDWebImageCompat.m in Sources */,
 				86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */,
 				86DC369B1C30DD0D0045F2C6 /* NSData+ImageContentType.m in Sources */,
 				86DC36A01C30DD0D0045F2C6 /* SDWebImageDownloaderOperation.m in Sources */,
 				F229F7301DFE3C3C006D72EE /* UIEmotionLabel.m in Sources */,
 				86DC36A71C30DD0D0045F2C6 /* UIImageView+WebCache.m in Sources */,
+				F2D15EFB1E0D0EDC008232DA /* NSString+alas.m in Sources */,
 				77C8F65A1DFEF700006B0C3E /* UILabel+alas.m in Sources */,
 				86DC36A11C30DD0D0045F2C6 /* SDWebImageManager.m in Sources */,
 				86DC36A51C30DD0D0045F2C6 /* UIImage+MultiFormat.m in Sources */,

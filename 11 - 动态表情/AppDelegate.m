@@ -1,9 +1,9 @@
 //
 //  AppDelegate.m
-//  11 - 动态表情
+//  DynamicEmoji
 //
-//  Created by 于传峰 on 15/12/28.
-//  Copyright © 2015年 于传峰. All rights reserved.
+//  Created by chen diyu on 16/12/23.
+//  Copyright © 2016年 alas743k. All rights reserved.
 //
 
 #import "AppDelegate.h"

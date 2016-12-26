@@ -37,7 +37,7 @@
     self.layer.cornerRadius = 5;
     self.layer.borderWidth = 1;
     self.layer.borderColor = [UIColor darkGrayColor].CGColor;
-    self.bounds = CGRectMake(0, 0, self.bounds.size.width, self.font.lineHeight+self.textContainerInset.top+self.textContainerInset.bottom);
+//    self.bounds = CGRectMake(0, 0, self.bounds.size.width, self.font.lineHeight+self.textContainerInset.top+self.textContainerInset.bottom);
 }
 
 - (UIColor *)placeholderColor {
@@ -47,11 +47,9 @@
     return [UIColor lightGrayColor];
 }
 
-
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
     if (self.text.length<1 && _placeholder.length) {
-//        [_placeholder drawAtPoint:CGPointMake(self.textContainer.lineFragmentPadding+self.textContainerInset.left, self.textContainerInset.top) withAttributes:@{NSFontAttributeName:self.font,NSForegroundColorAttributeName:self.placeholderColor}];
         
         CGFloat x = self.textContainer.lineFragmentPadding+self.textContainerInset.left;
         CGFloat y = self.textContainerInset.top;
@@ -61,6 +59,8 @@
         paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
         
         NSDictionary *attributes = @{NSFontAttributeName:self.font,NSForegroundColorAttributeName:self.placeholderColor,NSParagraphStyleAttributeName:paragraphStyle};
+//        [_placeholder drawAtPoint:CGPointMake(x, y) withAttributes:attributes];
+
         [_placeholder drawWithRect:frame options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     }
 }
@@ -110,9 +110,5 @@
 - (NSString *)text {
     return [NSString reverseAttributedStringToString:self.attributedText];
 }
-
-
-
-
 
 @end

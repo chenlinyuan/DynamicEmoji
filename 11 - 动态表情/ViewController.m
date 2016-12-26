@@ -49,7 +49,7 @@
         [UIView animateWithDuration:.25 animations:^{
             _textView.frame = frame;
             _tableView.frame = CGRectMake(0, _tableView.frame.origin.y, _tableView.frame.size.width, frame.origin.y-_tableView.frame.origin.y);
-            CGPoint offset = CGPointMake(0, self.tableView.contentSize.height - self.tableView.frame.size.height);
+            CGPoint offset = CGPointMake(0, MAX(0, self.tableView.contentSize.height - self.tableView.frame.size.height));
             [_tableView setContentOffset:offset animated:YES];
         }];
     }

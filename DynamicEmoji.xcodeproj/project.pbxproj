@@ -172,6 +172,8 @@
 		F2CFBA401DFFE3AD009044B3 /* NSTextAttachment+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = F2CFBA3F1DFFE3AD009044B3 /* NSTextAttachment+alas.m */; };
 		F2D15EF81E0CF6A5008232DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D15EF71E0CF6A5008232DA /* ViewController.m */; };
 		F2D15EFB1E0D0EDC008232DA /* NSString+alas.m in Sources */ = {isa = PBXBuildFile; fileRef = F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */; };
+		F2EB09F71E111B4900932678 /* ALView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EB09F61E111B4900932678 /* ALView.m */; };
+		F2EB09FA1E111E5F00932678 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = F2EB09F91E111E5F00932678 /* ViewController2.m */; };
 		F2FC98F41E07D39B006EA643 /* ALTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2FC98F31E07D39B006EA643 /* ALTextView.m */; };
 /* End PBXBuildFile section */
 
@@ -364,6 +366,10 @@
 		F2D15EF71E0CF6A5008232DA /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F2D15EF91E0D0EDC008232DA /* NSString+alas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+alas.h"; sourceTree = "<group>"; };
 		F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+alas.m"; sourceTree = "<group>"; };
+		F2EB09F51E111B4900932678 /* ALView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALView.h; sourceTree = "<group>"; };
+		F2EB09F61E111B4900932678 /* ALView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALView.m; sourceTree = "<group>"; };
+		F2EB09F81E111E5F00932678 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		F2EB09F91E111E5F00932678 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
 		F2FC98F21E07D39B006EA643 /* ALTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALTextView.h; sourceTree = "<group>"; };
 		F2FC98F31E07D39B006EA643 /* ALTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALTextView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -410,6 +416,10 @@
 				F2FC98F31E07D39B006EA643 /* ALTextView.m */,
 				F2D15EF91E0D0EDC008232DA /* NSString+alas.h */,
 				F2D15EFA1E0D0EDC008232DA /* NSString+alas.m */,
+				F2EB09F51E111B4900932678 /* ALView.h */,
+				F2EB09F61E111B4900932678 /* ALView.m */,
+				F2EB09F81E111E5F00932678 /* ViewController2.h */,
+				F2EB09F91E111E5F00932678 /* ViewController2.m */,
 				F23FC9EE1E08C31F00D40C7A /* Main.storyboard */,
 				86DC36561C30DCEB0045F2C6 /* Assets.xcassets */,
 				86DC36581C30DCEB0045F2C6 /* LaunchScreen.storyboard */,
@@ -841,8 +851,10 @@
 				F2CFBA401DFFE3AD009044B3 /* NSTextAttachment+alas.m in Sources */,
 				86DC36A41C30DD0D0045F2C6 /* UIImage+GIF.m in Sources */,
 				86DC369F1C30DD0D0045F2C6 /* SDWebImageDownloader.m in Sources */,
+				F2EB09FA1E111E5F00932678 /* ViewController2.m in Sources */,
 				86DC36A31C30DD0D0045F2C6 /* UIButton+WebCache.m in Sources */,
 				86DC36A61C30DD0D0045F2C6 /* UIImageView+HighlightedWebCache.m in Sources */,
+				F2EB09F71E111B4900932678 /* ALView.m in Sources */,
 				86DC369E1C30DD0D0045F2C6 /* SDWebImageDecoder.m in Sources */,
 				86DC369D1C30DD0D0045F2C6 /* SDWebImageCompat.m in Sources */,
 				86DC364F1C30DCEB0045F2C6 /* AppDelegate.m in Sources */,

@@ -12,6 +12,8 @@
 #import "UILabel+alas.h"
 #import "ALTextView.h"
 #import "NSString+alas.h"
+#import "ViewController2.h"
+#import "ALView.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -33,7 +35,7 @@
     [self addObserver:self forKeyPath:@"self.textView.contentSize" options:NSKeyValueObservingOptionNew context:NULL];
     _dataArray = [NSMutableArray array];
     _tableView.tableFooterView = [UIView new];
-    _tableView.allowsSelection = NO;
+//    _tableView.allowsSelection = NO;
 }
 
 
@@ -129,6 +131,15 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return [self tableView:tableView estimatedHeightForRowAtIndexPath:indexPath];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    ViewController2 *vc = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"ViewController2"];
+    [self.navigationController pushViewController:vc animated:YES];
+    
+    NSString *string = _dataArray[indexPath.row];
+    vc.string = string;
+   
 }
 
 - (IBAction)sendMsg:(id)sender {

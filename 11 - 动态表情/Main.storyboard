@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="rcH-d7-kF3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="rcH-d7-kF3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -29,11 +30,15 @@
         <scene sceneID="BWr-t6-hV2">
             <objects>
                 <viewController id="9Md-oh-FOX" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mDt-U9-E6u"/>
+                        <viewControllerLayoutGuide type="bottom" id="0O8-5x-Qsl"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yfh-Vx-77K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="llL-5u-W8B">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="llL-5u-W8B">
                                 <rect key="frame" x="0.0" y="20" width="375" height="596"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -42,7 +47,7 @@
                                     <outlet property="delegate" destination="9Md-oh-FOX" id="rL7-G1-xhz"/>
                                 </connections>
                             </tableView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" textAlignment="natural" id="goX-I0-xSR" customClass="ALTextView">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="goX-I0-xSR" customClass="ALTextView">
                                 <rect key="frame" x="15" y="624" width="344" height="43"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -124,17 +129,40 @@
         <scene sceneID="4Kl-ri-sag">
             <objects>
                 <viewController storyboardIdentifier="ViewController2" id="4FZ-sM-8VK" customClass="ViewController2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lcW-Fw-FZ6"/>
+                        <viewControllerLayoutGuide type="bottom" id="NZJ-hF-Mvs"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="WL1-sT-Pqe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" id="0Z9-M9-Gdf" customClass="ALView">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0Z9-M9-Gdf" customClass="ALView">
+                                <rect key="frame" x="16" y="454" width="343" height="213"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i0n-mF-Ot6">
+                                        <rect key="frame" x="15" y="15" width="313" height="183"/>
+                                        <string key="text">fqwfqwfwfqegwegwegwegwegwegwgwergwegrwgrew65g4w6rag6awr4g6war46gwagfqwfqwfwfqegwegwegwegwegwegwgwergwegrwgrew65g4w6rag6awr4g6war46gwagfqwfqwfwfqegwegwegwegwegwegwgwergwegrwgrew65g4w6rag6awr4g6war46gwagfqwfqwfwfqegwegwegwegwegwegwgwergwegrwgrew65g4w6rag6awr4g6war46gwag</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="i0n-mF-Ot6" secondAttribute="bottom" constant="15" id="4jr-7B-02N"/>
+                                    <constraint firstItem="i0n-mF-Ot6" firstAttribute="top" secondItem="0Z9-M9-Gdf" secondAttribute="top" constant="15" id="7Ut-mj-VCK"/>
+                                    <constraint firstAttribute="trailing" secondItem="i0n-mF-Ot6" secondAttribute="trailing" constant="15" id="jV4-xR-3X9"/>
+                                    <constraint firstItem="i0n-mF-Ot6" firstAttribute="leading" secondItem="0Z9-M9-Gdf" secondAttribute="leading" constant="15" id="yeS-ab-ndG"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0Z9-M9-Gdf" firstAttribute="leading" secondItem="WL1-sT-Pqe" secondAttribute="leadingMargin" id="2e9-uk-Ejb"/>
+                            <constraint firstItem="NZJ-hF-Mvs" firstAttribute="top" secondItem="0Z9-M9-Gdf" secondAttribute="bottom" id="R2f-Bv-Y79"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0Z9-M9-Gdf" secondAttribute="trailing" id="cFo-Yk-EXt"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xmm-iE-P3H"/>
                     <connections>

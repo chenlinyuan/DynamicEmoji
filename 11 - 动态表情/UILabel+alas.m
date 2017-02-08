@@ -14,7 +14,7 @@
 @implementation UILabel (alas)
 
 @dynamic textContainer,textStorage,layoutManager;
-//@dynamic textContainerClass,textStorageClass,layoutManagerClass;
+
 char textStorageKey;
 char textContainerKey;
 char layoutManagerKey;
@@ -41,7 +41,7 @@ char layoutManagerKey;
 - (NSTextStorage *)textStorage {
     NSTextStorage *obj = objc_getAssociatedObject(self, &textStorageKey);
     if (!obj) {
-        obj = [[[self class] textStorageClass] new];
+        obj = [[[[self class] textStorageClass] alloc] initWithAttributedString:self.attributedText];
         [obj addLayoutManager:self.layoutManager];
         self.textStorage = obj;
     }
@@ -59,10 +59,6 @@ char layoutManagerKey;
 - (void)setTextStorage:(NSTextStorage *)textStorage {
     objc_setAssociatedObject(self, &textStorageKey, textStorage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
-//char textStorageClassKey;
-//char layoutManagerClassKey;
-//char textContainerClassKey;
 
 + (Class)textStorageClass {
     return [NSTextStorage class];
@@ -100,9 +96,11 @@ char layoutManagerKey;
 #pragma mark - LayoutManager
 
 - (CGRect)contentRectofRange:(NSRange)range {
+    [self setupTextContainer];
+    [self layoutManager];
+    [self textStorage];
     NSRange characterRange = range;
     NSRange glyphRange = [self.layoutManager glyphRangeForCharacterRange:characterRange actualCharacterRange:nil];
-    [self setupTextContainer];
     return [self.layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:self.textContainer];
 }
 
@@ -118,8 +116,6 @@ char layoutManagerKey;
 - (NSAttributedString*)attributedStringWithString:(NSString*)contentString {
     NSString* pattern = @"/[0-9]{1,3}";
     NSRegularExpression* regx = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
-//    NSString* path = [[NSBundle mainBundle] pathForResource:@"EmotionGifList" ofType:@"plist"];
-//    NSDictionary* emotionDic = [NSDictionary dictionaryWithContentsOfFile:path];
     NSMutableDictionary* gifEomtionDict = [[NSMutableDictionary alloc] init];
     [regx enumerateMatchesInString:contentString options:NSMatchingReportProgress range:NSMakeRange(0, contentString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
         NSString* resultString = [contentString substringWithRange:result.range];
@@ -129,7 +125,6 @@ char layoutManagerKey;
         }
         if (gifName) {
             gifEomtionDict[NSStringFromRange(NSMakeRange(result.range.location, resultString.length))] = gifName;
-//            NSLog(@"%@----%@====%@", resultString, gifName, gifEomtionDict);
         }
     }];
     

@@ -110,22 +110,52 @@
     return _dataArray.count;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
-        cell.textLabel.numberOfLines = 0;
     }
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    UIEmotionLabel *label = [[UIEmotionLabel alloc] init];
+    label.numberOfLines = 0;
+    label.attributedText = [NSString attributedStringWithString:_dataArray[indexPath.row] font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
+    [cell.contentView addSubview:label];
     
-    cell.textLabel.attributedText = [NSString attributedStringWithString:_dataArray[indexPath.row] font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
+    label.translatesAutoresizingMaskIntoConstraints = NO;
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[label]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-15-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+    [cell.contentView updateConstraintsIfNeeded];
+    
     
     return cell;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *string = _dataArray[indexPath.row];
-    NSAttributedString *aString = [NSString attributedStringWithString:string font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
-    return [aString boundingRectWithSize:CGSizeMake(self.view.bounds.size.width-15*2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height+5*2;
+//    return 120;
+    static UITableViewCell *cell;
+    static UIEmotionLabel *label;
+//    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+        label = [[UIEmotionLabel alloc] init];
+        label.numberOfLines = 0;
+        [cell.contentView addSubview:label];
+        
+        label.translatesAutoresizingMaskIntoConstraints = NO;
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label(<=320)]-15-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[label]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+    
+        [cell.contentView updateConstraintsIfNeeded];
+//    }
+    label.attributedText = [NSString attributedStringWithString:_dataArray[indexPath.row] font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
+    [cell.contentView layoutIfNeeded];
+//    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
+//    UILayoutPriorityDefaultHigh
+    return label.intrinsicContentSize.height;
+//    NSString *string = _dataArray[indexPath.row];
+//    NSAttributedString *aString = [NSString attributedStringWithString:string font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
+//    return [aString boundingRectWithSize:CGSizeMake(self.view.bounds.size.width-15*2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height+5*2;
 }
 
 

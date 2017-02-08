@@ -42,6 +42,7 @@
         NSTextAttachment* attachment = [[NSTextAttachment alloc] init];
         NSString *gifName = [gifEomtionDict[rangeString] substringFromIndex:1];
         attachment.string = gifEomtionDict[rangeString];
+        attachment.imageName = gifName;
         UIImage *image = [UIImage sd_animatedGIFNamed:gifName];
         attachment.image = image;
         attachment.bounds = CGRectMake(0, font.descender, font.lineHeight, font.lineHeight);

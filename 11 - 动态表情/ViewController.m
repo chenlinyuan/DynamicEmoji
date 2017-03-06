@@ -19,9 +19,10 @@
 
 @property (weak, nonatomic) IBOutlet ALTextView *textView;
 @property (weak, nonatomic) IBOutlet UIToolbar *toolBar;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 @property (strong, nonatomic) NSMutableArray *dataArray;
+
 @end
 
 @implementation ViewController
@@ -35,7 +36,7 @@
     [self addObserver:self forKeyPath:@"self.textView.contentSize" options:NSKeyValueObservingOptionNew context:NULL];
     _dataArray = [NSMutableArray array];
     _tableView.tableFooterView = [UIView new];
-//    _tableView.allowsSelection = NO;
+    //    _tableView.allowsSelection = NO;
 }
 
 
@@ -132,10 +133,10 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-//    return 120;
+    //    return 120;
     static UITableViewCell *cell;
     static UIEmotionLabel *label;
-//    if (!cell) {
+    if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
         [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
         label = [[UIEmotionLabel alloc] init];
@@ -143,19 +144,14 @@
         [cell.contentView addSubview:label];
         
         label.translatesAutoresizingMaskIntoConstraints = NO;
-    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label(<=320)]-15-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
-    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[label]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
-    
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-15-[label]-15-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+        [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-5-[label]-5-|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(label)]];
+        
         [cell.contentView updateConstraintsIfNeeded];
-//    }
+    }
     label.attributedText = [NSString attributedStringWithString:_dataArray[indexPath.row] font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
     [cell.contentView layoutIfNeeded];
-//    CGSize size = [cell.contentView systemLayoutSizeFittingSize:UILayoutFittingCompressedSize];
-//    UILayoutPriorityDefaultHigh
     return label.intrinsicContentSize.height;
-//    NSString *string = _dataArray[indexPath.row];
-//    NSAttributedString *aString = [NSString attributedStringWithString:string font:[UIFont preferredFontForTextStyle:UIFontTextStyleBody] textColor:[UIColor darkTextColor]];
-//    return [aString boundingRectWithSize:CGSizeMake(self.view.bounds.size.width-15*2, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin context:nil].size.height+5*2;
 }
 
 
@@ -169,7 +165,7 @@
     
     NSString *string = _dataArray[indexPath.row];
     vc.string = string;
-   
+    
 }
 
 - (IBAction)sendMsg:(id)sender {

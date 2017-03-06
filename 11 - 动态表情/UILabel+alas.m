@@ -7,9 +7,17 @@
 //
 
 #import "UILabel+alas.h"
-#import "UIImage+GIF.h"
 #import <objc/runtime.h>
 #import "NSTextAttachment+alas.h"
+
+@interface UILabelLink : NSObject
+
+@property (strong, nonatomic) NSURL *link;
+@property (assign, nonatomic) NSRange range;
+
++ (instancetype)linkWithURL:(NSURL *)URL range:(NSRange)range;
+
+@end
 
 @implementation UILabel (alas)
 
@@ -18,6 +26,8 @@
 char textStorageKey;
 char textContainerKey;
 char layoutManagerKey;
+
+char shouldInteractWithURLKey;
 
 - (NSTextContainer *)textContainer {
     NSTextContainer *obj = objc_getAssociatedObject(self, &textContainerKey);
@@ -48,6 +58,10 @@ char layoutManagerKey;
     return obj;
 }
 
+- (BOOL (^)(NSURL *, NSRange))shouldInteractWithURL {
+    return objc_getAssociatedObject(self, &shouldInteractWithURLKey);
+}
+
 - (void)setTextContainer:(NSTextContainer *)textContainer {
     objc_setAssociatedObject(self, &textContainerKey, textContainer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
@@ -59,6 +73,11 @@ char layoutManagerKey;
 - (void)setTextStorage:(NSTextStorage *)textStorage {
     objc_setAssociatedObject(self, &textStorageKey, textStorage, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
+
+- (void)setShouldInteractWithURL:(BOOL (^)(NSURL *, NSRange))shouldInteractWithURL {
+    objc_setAssociatedObject(self, &shouldInteractWithURLKey, shouldInteractWithURL, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
 
 + (Class)textStorageClass {
     return [NSTextStorage class];
@@ -113,51 +132,42 @@ char layoutManagerKey;
     self.textContainer.lineBreakMode = self.lineBreakMode;
 }
 
-- (NSAttributedString*)attributedStringWithString:(NSString*)contentString {
-    NSString* pattern = @"/[0-9]{1,3}";
-    NSRegularExpression* regx = [[NSRegularExpression alloc] initWithPattern:pattern options:NSRegularExpressionCaseInsensitive error:nil];
-    NSMutableDictionary* gifEomtionDict = [[NSMutableDictionary alloc] init];
-    [regx enumerateMatchesInString:contentString options:NSMatchingReportProgress range:NSMakeRange(0, contentString.length) usingBlock:^(NSTextCheckingResult * _Nullable result, NSMatchingFlags flags, BOOL * _Nonnull stop) {
-        NSString* resultString = [contentString substringWithRange:result.range];
-        NSString* gifName = nil;
-        if ([resultString compare:@"/000"] == NSOrderedDescending && [resultString compare:@"/142"] == NSOrderedAscending) {
-            gifName = resultString;
-        }
-        if (gifName) {
-            gifEomtionDict[NSStringFromRange(NSMakeRange(result.range.location, resultString.length))] = gifName;
+- (NSMutableArray *)links {
+    NSMutableArray *array = [NSMutableArray array];
+    [self.attributedText enumerateAttribute:NSLinkAttributeName inRange:NSMakeRange(0, self.attributedText.length) options:0 usingBlock:^(id  _Nullable value, NSRange range, BOOL * _Nonnull stop) {
+        if (value) {
+            [array addObject:[UILabelLink linkWithURL:value range:range]];
         }
     }];
-    
-    NSMutableAttributedString* attributedString = [[NSMutableAttributedString alloc] initWithString:contentString];
-    NSMutableArray* ranges = [gifEomtionDict.allKeys mutableCopy];
-    [ranges sortUsingComparator:^NSComparisonResult(NSString* obj1, NSString* obj2) {
-        NSRange range1 = NSRangeFromString(obj1);
-        NSRange range2 = NSRangeFromString(obj2);
-        
-        if (range1.location < range2.location) {
-            return NSOrderedDescending;
+    return array;
+}
+
+- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+    for (UILabelLink *  _Nonnull obj in [self links]) {
+        CGRect rect = [self contentRectofRange:obj.range];
+        if (CGRectContainsPoint(rect, point)) {
+            if (self.shouldInteractWithURL) {
+                if (self.shouldInteractWithURL(obj.link,obj.range)) {
+                    return self;
+                }
+                break;
+            }
         }
-        
-        return NSOrderedAscending;
-    }];
-    
-    for (NSString* rangeString in ranges) {
-        NSTextAttachment* attachment = [[NSTextAttachment alloc] init];
-        NSString *gifName = [gifEomtionDict[rangeString] substringFromIndex:1];
-        UIImage *image = [UIImage sd_animatedGIFNamed:gifName];
-        if (image) {
-            attachment.imageName = gifName;
-        } else {
-            attachment.image = [UIImage imageNamed:gifName];
-        }        
-        attachment.bounds = CGRectMake(0, self.font.descender, image.size.width, image.size.height);
-        NSAttributedString* attachmentString = [NSAttributedString attributedStringWithAttachment:attachment];
-        [attributedString replaceCharactersInRange:NSRangeFromString(rangeString) withAttributedString:attachmentString];
     }
-    
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor redColor] range:NSMakeRange(0, attributedString.length)];
-    [attributedString addAttribute:NSFontAttributeName value:self.font range:NSMakeRange(0, attributedString.length)];
-    return attributedString;
+    return [super hitTest:point withEvent:event];
+}
+
+@end
+
+@implementation UILabelLink
+
++ (instancetype)linkWithURL:(NSURL *)URL range:(NSRange)range {
+    UILabelLink *link = [UILabelLink new];
+    if (link) {
+        link.link = URL;
+        link.range = range;
+    }
+    return link;
 }
 
 @end

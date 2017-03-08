@@ -29,6 +29,7 @@ char layoutManagerKey;
 
 char shouldInteractWithURLKey;
 
+
 - (NSTextContainer *)textContainer {
     NSTextContainer *obj = objc_getAssociatedObject(self, &textContainerKey);
     if (!obj) {
@@ -91,6 +92,12 @@ char shouldInteractWithURLKey;
     return [NSTextContainer class];
 }
 
+- (void)setupSword {
+    [self setupTextContainer];
+    [self layoutManager];
+    [self textStorage];
+}
+
 #pragma mark - Truncation
 
 - (NSRange)truncatedRange {
@@ -115,9 +122,7 @@ char shouldInteractWithURLKey;
 #pragma mark - LayoutManager
 
 - (CGRect)contentRectofRange:(NSRange)range {
-    [self setupTextContainer];
-    [self layoutManager];
-    [self textStorage];
+    [self setupSword];
     NSRange characterRange = range;
     NSRange glyphRange = [self.layoutManager glyphRangeForCharacterRange:characterRange actualCharacterRange:nil];
     return [self.layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:self.textContainer];
@@ -142,19 +147,44 @@ char shouldInteractWithURLKey;
     return array;
 }
 
+//- (void)dasd:(CGRect)frame {
+//    static UIView *view = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        view = [[UIView alloc] init];
+//        view.layer.borderWidth = .5;
+//        view.layer.borderColor = [UIColor redColor].CGColor;
+//    });
+//
+//    if (view.superview) {
+//        [view removeFromSuperview];
+//    }
+//    [self addSubview:view];
+//    view.frame = frame;
+//}
+
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    for (UILabelLink *  _Nonnull obj in [self links]) {
-        CGRect rect = [self contentRectofRange:obj.range];
-        if (CGRectContainsPoint(rect, point)) {
-            if (self.shouldInteractWithURL) {
-                if (self.shouldInteractWithURL(obj.link,obj.range)) {
-                    return self;
+    if (!self.userInteractionEnabled) {
+        return [super hitTest:point withEvent:event];
+    }
+    [self.textStorage setAttributedString:self.attributedText];
+    [self setupTextContainer];
+    NSInteger index2 = [self.layoutManager glyphIndexForPoint:point inTextContainer:self.textContainer];
+    CGRect rect = [self.layoutManager boundingRectForGlyphRange:NSMakeRange(index2, 1) inTextContainer:self.textContainer];
+    NSLog(@"%@,%zd,%c",NSStringFromCGRect(rect),index2,[self.text characterAtIndex:index2]);
+    //    [self dasd:rect];
+    if (CGRectContainsPoint(rect, point)) {
+        for (UILabelLink *  _Nonnull obj in [self links]) {
+            if ((obj.range.length > 0) && (index2 >= obj.range.location) && (index2 < obj.range.location+obj.range.length)) {
+                if (self.shouldInteractWithURL) {
+                    if (self.shouldInteractWithURL(obj.link,obj.range)) {
+                        return self;
+                    }
                 }
-                break;
             }
         }
     }
-    return [super hitTest:point withEvent:event];
+    return self;
 }
 
 @end

@@ -14,7 +14,7 @@
 
 @property (nonatomic, assign) CGFloat maxHeight;
 
-@property (nonatomic, copy) IBInspectable NSString *placeholder;
-@property (nonatomic, strong) IBInspectable UIColor *placeholderColor;
+@property (nonatomic, copy) NSString *placeholder;
+@property (nonatomic, strong) UIColor *placeholderColor;
 
 @end

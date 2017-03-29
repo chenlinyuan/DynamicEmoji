@@ -9,35 +9,40 @@
 #import "ALTextView.h"
 #import "NSString+alas.h"
 #import "NSTextAttachment+alas.h"
+#import <objc/runtime.h>
+#import <objc/message.h>
 
 @interface ALTextView () <NSTextStorageDelegate,NSLayoutManagerDelegate,UITextViewDelegate>
 
-
-
 @end
+
 
 @implementation ALTextView
 
 /*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
+ // Only override drawRect: if you perform custom drawing.
+ // An empty implementation adversely affects performance during animation.
+ - (void)drawRect:(CGRect)rect {
+ // Drawing code
+ }
+ */
+
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
+    if (self) {
+        [self awakeFromNib];
+    }
+    return self;
 }
-*/
 
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.contentMode = UIViewContentModeRedraw;
     self.textStorage.delegate = self;
     self.layoutManager.delegate = self;
-    self.delegate = self;
-    
     _maxHeight = 100;
-    self.layer.cornerRadius = 5;
-    self.layer.borderWidth = 1;
-    self.layer.borderColor = [UIColor darkGrayColor].CGColor;
-//    self.bounds = CGRectMake(0, 0, self.bounds.size.width, self.font.lineHeight+self.textContainerInset.top+self.textContainerInset.bottom);
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewDidChange:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
 - (UIColor *)placeholderColor {
@@ -47,9 +52,18 @@
     return [UIColor lightGrayColor];
 }
 
+- (UIColor *)textColor {
+    UIColor *color = [super textColor];
+    if (!color) {
+        color = [UIColor darkTextColor];
+    }
+    return color;
+}
+
 - (void)drawRect:(CGRect)rect {
     [super drawRect:rect];
-    if (self.text.length<1 && _placeholder.length) {
+    
+    if (self.text.length < 1 && self.attributedText.length < 1 && _placeholder.length) {
         
         CGFloat x = self.textContainer.lineFragmentPadding+self.textContainerInset.left;
         CGFloat y = self.textContainerInset.top;
@@ -59,8 +73,6 @@
         paragraphStyle.lineBreakMode = NSLineBreakByTruncatingTail;
         
         NSDictionary *attributes = @{NSFontAttributeName:self.font,NSForegroundColorAttributeName:self.placeholderColor,NSParagraphStyleAttributeName:paragraphStyle};
-//        [_placeholder drawAtPoint:CGPointMake(x, y) withAttributes:attributes];
-
         [_placeholder drawWithRect:frame options:NSStringDrawingUsesLineFragmentOrigin attributes:attributes context:nil];
     }
 }
@@ -73,6 +85,7 @@
     [super insertText:text];
 }
 
+
 - (void)copy:(id)sender {
     [UIPasteboard generalPasteboard].string = [NSString reverseAttributedStringToString:[self.attributedText attributedSubstringFromRange:self.selectedRange]];
 }
@@ -82,11 +95,6 @@
     NSMutableAttributedString *string = [self.attributedText mutableCopy];
     [string replaceCharactersInRange:self.selectedRange withString:@""];
     self.attributedText = string;
-    
-}
-
-- (void)paste:(id)sender {
-    [self appendText:[UIPasteboard generalPasteboard].string];
 }
 
 - (void)textViewDidChange:(UITextView *)textView {
@@ -109,6 +117,14 @@
 
 - (NSString *)text {
     return [NSString reverseAttributedStringToString:self.attributedText];
+}
+
+- (void)setContentOffset:(CGPoint)contentOffset {
+    if (self.contentSize.height > self.bounds.size.height) {
+        [super setContentOffset:contentOffset];
+    } else {
+        [super setContentOffset:CGPointZero];
+    }
 }
 
 @end
